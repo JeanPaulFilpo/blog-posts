@@ -1,0 +1,28 @@
+baseURL = 'https://jeanpaulfilpo.github.io/blog-posts/'
+title = "Nombre de tu Blog"
+theme = "PaperMod"
+defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = false
+
+[params]
+  env = "production"
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+[languages]
+  [languages.es]
+    label = "Español"
+    locale = "es-ES"
+    weight = 1
+    title = "Notas Del Profe"
+    [languages.es.params]
+      description = "Apuntes sobre datos, IA y demás"
+
+  [languages.en]
+    label = "English"
+    locale = "en-US"
+    weight = 2
+    title = "Notas Del Profe"
+    [languages.en.params]
+      description = "Notes on data, AI, and whatnot"
