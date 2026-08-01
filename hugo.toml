@@ -9,6 +9,22 @@ defaultContentLanguageInSubdir = false
   ShowReadingTime = true
   ShowCodeCopyButtons = true
   ShowToc = true
+  ShowShareButtons = false
+  [params.profileMode]
+    enabled = true
+    title = "Blog"
+    subtitle = "Algunos comentarios en ciencia, inteligencia artificial y cualquier otra cosa interesante."
+    imageUrl = "profile.png"
+    imageWidth = 120
+    imageHeight = 120
+    buttons = [
+      { name = "Posts", url = "posts" },
+      { name = "Sobre este espacio", url = "about" }
+    ]
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/jeanpaulfilpo"
 
 [languages]
   [languages.es]

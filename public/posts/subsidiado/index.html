@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es" dir="auto" data-theme="auto">
+
+<head><script src="/blog-posts/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog-posts/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>¿SubsidIAdos? | Notas Del Profe</title>
+<meta name="keywords" content="ia, infraestructura, modelos-abiertos">
+<meta name="description" content="¿Cuánto nos costaría correr modelos como Claude o GPT-5.6 en infraestructura propia?">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/blog-posts/posts/subsidiado/">
+<link crossorigin="anonymous" href="/blog-posts/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/blog-posts/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/blog-posts/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/blog-posts/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/blog-posts/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/blog-posts/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="es" href="http://localhost:1313/blog-posts/posts/subsidiado/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://localhost:1313/blog-posts/posts/subsidiado/">
+  <meta property="og:site_name" content="Notas Del Profe">
+  <meta property="og:title" content="¿SubsidIAdos?">
+  <meta property="og:description" content="¿Cuánto nos costaría correr modelos como Claude o GPT-5.6 en infraestructura propia?">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-08-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-08-01T00:00:00+00:00">
+    <meta property="article:tag" content="Ia">
+    <meta property="article:tag" content="Infraestructura">
+    <meta property="article:tag" content="Modelos-Abiertos">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="¿SubsidIAdos?">
+  <meta name="twitter:description" content="¿Cuánto nos costaría correr modelos como Claude o GPT-5.6 en infraestructura propia?">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/blog-posts/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "¿SubsidIAdos?",
+      "item": "http://localhost:1313/blog-posts/posts/subsidiado/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "¿SubsidIAdos?",
+  "name": "¿SubsidIAdos?",
+  "description": "¿Cuánto nos costaría correr modelos como Claude o GPT-5.6 en infraestructura propia?",
+  "keywords": [
+    "ia", "infraestructura", "modelos-abiertos"
+  ],
+  "articleBody": "Creo que el término «open-weights» en lo que concierne a IA y grandes modelos del lenguaje sigue siendo relativamente desconocido, más allá del dominio de quiénes seguimos esta tecnología desde una perspectiva académica y profesional.\nA grandes rasgos, una LLM de pesos abiertos es un modelo de lenguaje donde la empresa/desarrollador que lo entrenó publica los parámetros ya entrenados (léase, los pesos del modelo) para que cualquiera los pueda descargar y consumir libremente, sin necesidad de pagar un acceso a través de una API. Empresas como Meta y DeepSeek han lanzado modelos abiertos, y los benchmarks muestran que su rendimiento es bastante aceptable en comparación con frontier models como Claude Opus 5 y GPT-5.6.\nEspera…¿hay modelos de IA que son gratis? Nada es gratis. Sin embargo, lo que sí es cierto es que si puedes descargar estos modelos y correrlos en tu propia computadora, podrías interactuar con los mismos sin pagar costos de inferencia. Es decir, hablarle al modelo y recibir respuestas del modelo no tendría costo (aunque probablemente extrañes la interfaz estética y funcional de Claude Code o ChatGPT).\nSi esto es así, entonces:\n¿Puede tu computadora alojar y correr un modelo como Claude? Hahaha. No.\nPara entender porqué, quiero contarte brevemente sobre Kimi K3.\nK3 es un modelo de la empresa china Moonshot AI, quienes lo lanzaron el 16 de julio de 2026 y publicaron los pesos el 27 de julio de 2026. Aunque en las fuentes te dejo el detalle técnico de Kimi, te adelanto que es un modelo de 2.8 mil millones de parámetros con una arquitectura Mixture-of-Experts (MoE), y es hasta el momento el modelo más grande (esencialmente, más inteligente) que se ha lanzado de manera abierta.\nSegún diferentes benchmarks (que encontrarás en las fuentes) Kimi compite directamente con frontier models como GPT-5.6 Sol y Claude Fable 5 y eso lo hace (al día que escribimos este post) el mejor comparativo que tenemos para determinar qué implicaría correr estos modelos por cuenta propia. De acuerdo a algunas especificaciones consultadas, requeriríamos solamente:\n594 GB de espacio en disco para los pesos del modelo. Mínimo 8x GPUs H100 de 80GB. Okay. ¿Y qué cuestan esos GPUs? Como podrán imaginar dado el boom actual de la IA, la demanda de estas tecnologías está por las nubes y el precio de un solo GPU H100 oscila entre los US$25,000 y US$40,000, si es que los encuentras. Siendo conservadores, podrías sustituirlos por GPUs A100 con precios entre los US$10,000 y US$20,000. Si necesitamos 8, le dejo el resto de la ecuación a usted, estimado lector.\n¿Y quién habló de comprar? Yo trabajo en la nube. No hay problema. El costo en nube por estos GPUs ronda entre US$1.50 - US$4.50 por hora. Para no arruinar la sorpresa, asume un promedio de US$3/h, 8 horas de uso diarias, 25 días de uso al mes, por 8 GPUs, y luego cuéntame si te hace sentido.\nPero yo pago US$20 por mi suscripción. ¿Cómo esto es rentable para estas empresas? No lo es. Actualmente la mayoría de las grandes empresas de desarrollo de LLM están operando bajo un modelo de cash-burn que busca generar demanda y acaparar mercado, bajo la esperanza de liquidez mediante valuaciones astronómicas (y probablemente poco realistas). De hecho, según proyecciones de Bloomberg, OpenAI tiene planes de quemar hasta US$218 billones para el 2029; para tener alguna referencia de lo absurdo del número, el ejemplo moderno y más famoso de cash-burn es probablemente Uber, con unos pírricos US$18.2 billones entre 2016 y 2022.\n¿Quién sale ganando entonces? ¿Y a quiénes les convienen los modelos de pesos abiertos? Nosotros, al menos por ahora. De hecho, justo en esta semana OpenAI tuvo agresivos recortes en los precios por token de varios de sus modelos y cada vez más se añaden nuevas funcionalidades a las interfaces web, mientras a su vez los fabricantes chinos lanzan modelos abiertos de bajo costo y alto rendimiento que buscan insertarse en el mercado e influir en los precios actuales.\nAsí mismo, estos modelos propician la competitividad y a su vez dan acceso a comunidades de investigadores y desarrolladores que hacen que cada día los modelos sean más inteligentes, pero sobre todo más eficientes.\nY por supuesto, a los fabricantes de GPUs (te veo, Nvidia) y proveedores de nube que actualmente están viendo retornos millonarios sobre sus inversiones.\nY de las empresas que desarrollan LLMs, ¿a cuáles ves ganándole la carrera al subsidio? Bueno, si me obligas a hacer una lista de todas las empresas que, a mi criterio, vencerán en la carrera del subsidio, se vería algo así:\nGoogle. ¿Por qué? Pues hay varias razones, pero principalmente porque Gemini no es la razón de ser de Google. Los grandes motores de revenue de Google son su negocio de ads (tanto en Google Search como en Youtube) y su negocio cloud. Esta fuente de ingresos constante es más que suficiente para justificar inversiones cuantiosas en el desarrollo de IA.\nSi consideras además su (ya existente y funcional) infraestructura tecnológica como el ecosistema de productos y servicios dentro de los cuáles pueden insertar a Gemini, la pregunta no es porqué Google, sino: ¿quién puede competir con eso?\nPues probablemente Apple, pero muchos de ustedes no están listos para esa conversación y aparentemente Apple tampoco.\nProfe, dígase un último mensaje. Disfrutemos mientras podamos.\nEstamos viviendo un momento privilegiado en el desarrollo de la IA, donde sigue vigente la máxima de que la IA que estamos usando hoy, es la peor que vamos a usar. Sin embargo, se están acercando los días donde también la IA que uses hoy será la más barata.\n¿Te acuerdas cuando decíamos que un teléfono nunca podría llegar a costar US$1,000? Qué tiempos.\nFuentes Kimi K3 Tech Blog Kimi K3: Moonshot’s 2.8T Open-Weight Model Explained Kimi K3 Open Weights: 2.8T Params, Day-0 Hosting Run Kimi K3 Locally: Confirmed Hardware + vLLM Kimi K3 — API Pricing \u0026 Benchmarks OpenAI Says Spending To Rise to $115B Through 2029 ",
+  "wordCount" : "991",
+  "inLanguage": "es",
+  "datePublished": "2026-08-01T00:00:00Z",
+  "dateModified": "2026-08-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/blog-posts/posts/subsidiado/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Notas Del Profe",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/blog-posts/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/blog-posts/" accesskey="h" title="Notas Del Profe (Alt + H)">Notas Del Profe</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="http://localhost:1313/blog-posts/en/" title="English"
+                                aria-label="English">En</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      ¿SubsidIAdos?
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-description">
+      ¿Cuánto nos costaría correr modelos como Claude o GPT-5.6 en infraestructura propia?
+    </div>
+    <div class="post-meta">
+
+<span title='2026-08-01 00:00:00 +0000 UTC'>1 de agosto de 2026</span>&nbsp;·&nbsp;<span>5 min</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Tabla de Contenidos</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#esperahay-modelos-de-ia-que-son-gratis" aria-label="Espera&hellip;¿hay modelos de IA que son gratis?">Espera&hellip;¿hay modelos de IA que son gratis?</a></li>
+            <li>
+                <a href="#puede-tu-computadora-alojar-y-correr-un-modelo-como-claude" aria-label="¿Puede tu computadora alojar y correr un modelo como Claude?">¿Puede tu computadora alojar y correr un modelo como Claude?</a></li>
+            <li>
+                <a href="#okay-y-qu%c3%a9-cuestan-esos-gpus" aria-label="Okay. ¿Y qué cuestan esos GPUs?">Okay. ¿Y qué cuestan esos GPUs?</a></li>
+            <li>
+                <a href="#y-qui%c3%a9n-habl%c3%b3-de-comprar-yo-trabajo-en-la-nube" aria-label="¿Y quién habló de comprar? Yo trabajo en la nube.">¿Y quién habló de comprar? Yo trabajo en la nube.</a></li>
+            <li>
+                <a href="#pero-yo-pago-us20-por-mi-suscripci%c3%b3n-c%c3%b3mo-esto-es-rentable-para-estas-empresas" aria-label="Pero yo pago US$20 por mi suscripción. ¿Cómo esto es rentable para estas empresas?">Pero yo pago US$20 por mi suscripción. ¿Cómo esto es rentable para estas empresas?</a></li>
+            <li>
+                <a href="#qui%c3%a9n-sale-ganando-entonces-y-a-qui%c3%a9nes-les-convienen-los-modelos-de-pesos-abiertos" aria-label="¿Quién sale ganando entonces? ¿Y a quiénes les convienen los modelos de pesos abiertos?">¿Quién sale ganando entonces? ¿Y a quiénes les convienen los modelos de pesos abiertos?</a></li>
+            <li>
+                <a href="#y-de-las-empresas-que-desarrollan-llms-a-cu%c3%a1les-ves-gan%c3%a1ndole-la-carrera-al-subsidio" aria-label="Y de las empresas que desarrollan LLMs, ¿a cuáles ves ganándole la carrera al subsidio?">Y de las empresas que desarrollan LLMs, ¿a cuáles ves ganándole la carrera al subsidio?</a></li>
+            <li>
+                <a href="#profe-d%c3%adgase-un-%c3%baltimo-mensaje" aria-label="Profe, dígase un último mensaje.">Profe, dígase un último mensaje.</a></li>
+            <li>
+                <a href="#fuentes" aria-label="Fuentes">Fuentes</a>
+            </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><p>Creo que el término «open-weights» en lo que concierne a  IA y grandes modelos del lenguaje sigue siendo relativamente desconocido, más allá del dominio de quiénes seguimos esta tecnología desde una perspectiva académica y profesional.</p>
+<p>A grandes rasgos, una LLM de pesos abiertos es un modelo de lenguaje donde la empresa/desarrollador que lo entrenó publica los parámetros ya entrenados (léase, los pesos del modelo) para que cualquiera los pueda descargar y consumir libremente, sin necesidad de pagar un acceso a través de una API. Empresas como Meta y DeepSeek han lanzado modelos abiertos, y los benchmarks muestran que su rendimiento es bastante aceptable en comparación con frontier models como Claude Opus 5 y GPT-5.6.</p>
+<h3 id="esperahay-modelos-de-ia-que-son-gratis">Espera&hellip;¿hay modelos de IA que son gratis?<a hidden class="anchor" aria-hidden="true" href="#esperahay-modelos-de-ia-que-son-gratis">#</a></h3>
+<p>Nada es gratis. Sin embargo, lo que sí es cierto es que si puedes descargar estos modelos y correrlos en tu propia computadora, podrías interactuar con los mismos sin pagar costos de inferencia. Es decir, hablarle al modelo y recibir respuestas del modelo no tendría costo (aunque probablemente extrañes la interfaz estética y funcional de Claude Code o ChatGPT).</p>
+<p>Si esto es así, entonces:</p>
+<h3 id="puede-tu-computadora-alojar-y-correr-un-modelo-como-claude">¿Puede tu computadora alojar y correr un modelo como Claude?<a hidden class="anchor" aria-hidden="true" href="#puede-tu-computadora-alojar-y-correr-un-modelo-como-claude">#</a></h3>
+<p>Hahaha. No.</p>
+<p>Para entender porqué, quiero contarte brevemente sobre Kimi K3.</p>
+<p>K3 es un modelo de la empresa china Moonshot AI, quienes lo lanzaron el 16 de julio de 2026 y publicaron los pesos el 27 de julio de 2026. Aunque en las fuentes te dejo el detalle técnico de Kimi, te adelanto que es un modelo de 2.8 mil millones de parámetros con una arquitectura Mixture-of-Experts (MoE), y es hasta el momento el modelo más grande (esencialmente, más inteligente) que se ha lanzado de manera abierta.</p>
+<p>Según diferentes benchmarks (que encontrarás en las fuentes) Kimi compite directamente con frontier models como GPT-5.6 Sol y Claude Fable 5 y eso lo hace (al día que escribimos este post) el mejor comparativo que tenemos para determinar qué implicaría correr estos modelos por cuenta propia. De acuerdo a algunas especificaciones consultadas, requeriríamos solamente:</p>
+<ul>
+<li><strong>594 GB</strong> de espacio en disco para los pesos del modelo.</li>
+<li>Mínimo <strong>8x GPUs H100 de 80GB</strong>.</li>
+</ul>
+<h3 id="okay-y-qué-cuestan-esos-gpus">Okay. ¿Y qué cuestan esos GPUs?<a hidden class="anchor" aria-hidden="true" href="#okay-y-qué-cuestan-esos-gpus">#</a></h3>
+<p>Como podrán imaginar dado el boom actual de la IA, la demanda de estas tecnologías está por las nubes y el precio de un solo GPU H100 oscila <strong>entre los US$25,000 y US$40,000</strong>, si es que los encuentras. Siendo conservadores, podrías sustituirlos por GPUs A100 con precios <strong>entre los US$10,000 y US$20,000</strong>. Si necesitamos 8, le dejo el resto de la ecuación a usted, estimado lector.</p>
+<h3 id="y-quién-habló-de-comprar-yo-trabajo-en-la-nube">¿Y quién habló de comprar? Yo trabajo en la nube.<a hidden class="anchor" aria-hidden="true" href="#y-quién-habló-de-comprar-yo-trabajo-en-la-nube">#</a></h3>
+<p>No hay problema. El costo en nube por estos GPUs ronda entre <strong>US$1.50 - US$4.50 por hora</strong>. Para no arruinar la sorpresa, asume un promedio de US$3/h, 8 horas de uso diarias, 25 días de uso al mes, por 8 GPUs, y luego cuéntame si te hace sentido.</p>
+<h3 id="pero-yo-pago-us20-por-mi-suscripción-cómo-esto-es-rentable-para-estas-empresas">Pero yo pago US$20 por mi suscripción. ¿Cómo esto es rentable para estas empresas?<a hidden class="anchor" aria-hidden="true" href="#pero-yo-pago-us20-por-mi-suscripción-cómo-esto-es-rentable-para-estas-empresas">#</a></h3>
+<p>No lo es. Actualmente la mayoría de las grandes empresas de desarrollo de LLM están operando bajo un modelo de cash-burn que busca generar demanda y acaparar mercado, bajo la esperanza de liquidez mediante valuaciones astronómicas (y probablemente poco realistas). De hecho, según proyecciones de Bloomberg, OpenAI tiene planes de quemar <strong>hasta US$218 billones</strong> para el 2029; para tener alguna referencia de lo absurdo del número, el ejemplo moderno y más famoso de cash-burn es probablemente Uber, con unos pírricos <strong>US$18.2 billones</strong> entre 2016 y 2022.</p>
+<h3 id="quién-sale-ganando-entonces-y-a-quiénes-les-convienen-los-modelos-de-pesos-abiertos">¿Quién sale ganando entonces? ¿Y a quiénes les convienen los modelos de pesos abiertos?<a hidden class="anchor" aria-hidden="true" href="#quién-sale-ganando-entonces-y-a-quiénes-les-convienen-los-modelos-de-pesos-abiertos">#</a></h3>
+<p>Nosotros, al menos por ahora. De hecho, justo en esta semana OpenAI tuvo agresivos recortes en los precios por token de varios de sus modelos y cada vez más se añaden nuevas funcionalidades a las interfaces web, mientras a su vez los fabricantes chinos lanzan modelos abiertos de  bajo costo y alto rendimiento que buscan insertarse en el mercado e influir en los precios actuales.</p>
+<p>Así mismo, estos modelos propician la competitividad y a su vez dan acceso a comunidades de investigadores y desarrolladores que hacen que cada día los modelos sean más inteligentes, pero sobre todo más eficientes.</p>
+<p>Y por supuesto, a los fabricantes de GPUs (te veo, Nvidia) y proveedores de nube que actualmente están viendo retornos millonarios sobre sus inversiones.</p>
+<h3 id="y-de-las-empresas-que-desarrollan-llms-a-cuáles-ves-ganándole-la-carrera-al-subsidio">Y de las empresas que desarrollan LLMs, ¿a cuáles ves ganándole la carrera al subsidio?<a hidden class="anchor" aria-hidden="true" href="#y-de-las-empresas-que-desarrollan-llms-a-cuáles-ves-ganándole-la-carrera-al-subsidio">#</a></h3>
+<p>Bueno, si me obligas a hacer una lista de todas las empresas que, a mi criterio, vencerán en la carrera del subsidio, se vería algo así:</p>
+<ol>
+<li>Google.</li>
+</ol>
+<p>¿Por qué? Pues hay varias razones, pero principalmente porque Gemini no es la razón de ser de Google. Los grandes motores de revenue de Google son su negocio de ads (tanto en Google Search como en Youtube) y su negocio cloud. Esta fuente de ingresos constante es más que suficiente para justificar inversiones cuantiosas en el desarrollo de IA.</p>
+<p>Si consideras además su (ya existente y funcional) infraestructura tecnológica como el ecosistema de productos y servicios dentro de los cuáles pueden insertar a Gemini, la pregunta no es porqué Google, sino: ¿quién puede competir con eso?</p>
+<p>Pues probablemente Apple, pero muchos de ustedes no están listos para esa conversación y aparentemente Apple tampoco.</p>
+<h3 id="profe-dígase-un-último-mensaje">Profe, dígase un último mensaje.<a hidden class="anchor" aria-hidden="true" href="#profe-dígase-un-último-mensaje">#</a></h3>
+<p>Disfrutemos mientras podamos.</p>
+<p>Estamos viviendo un momento privilegiado en el desarrollo de la IA, donde sigue vigente la máxima de que la IA que estamos usando hoy, es la peor que vamos a usar. Sin embargo, se están acercando los días donde también la IA que uses hoy será la más barata.</p>
+<p>¿Te acuerdas cuando decíamos que un teléfono nunca podría llegar a costar US$1,000? Qué tiempos.</p>
+<hr>
+<h3 id="fuentes">Fuentes<a hidden class="anchor" aria-hidden="true" href="#fuentes">#</a></h3>
+<ul>
+<li><a href="https://www.kimi.com/blog/kimi-k3">Kimi K3 Tech Blog</a></li>
+<li><a href="https://felloai.com/kimi-k3/">Kimi K3: Moonshot&rsquo;s 2.8T Open-Weight Model Explained</a></li>
+<li><a href="https://www.explainx.ai/blog/kimi-k3-open-weights-2-8-trillion-parameters-july-2026">Kimi K3 Open Weights: 2.8T Params, Day-0 Hosting</a></li>
+<li><a href="https://explainx.ai/blog/kimi-k3-run-locally-open-weights-desktop-july-2026">Run Kimi K3 Locally: Confirmed Hardware + vLLM</a></li>
+<li><a href="https://openrouter.ai/moonshotai/kimi-k3">Kimi K3 — API Pricing &amp; Benchmarks</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2025-09-06/openai-says-spending-to-rise-to-115b-through-2029-information">OpenAI Says Spending To Rise to $115B Through 2029</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/blog-posts/tags/ia/">Ia</a></li>
+      <li><a href="http://localhost:1313/blog-posts/tags/infraestructura/">Infraestructura</a></li>
+      <li><a href="http://localhost:1313/blog-posts/tags/modelos-abiertos/">Modelos-Abiertos</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/blog-posts/">Notas Del Profe</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copiar';
+
+        function copyingDone() {
+            copybutton.innerHTML = '¡copiado!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copiar';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Notas Del Profe</title>
-    <link>http://localhost:1313/blog-posts/posts/</link>
-    <description>Recent content in Posts on Notas Del Profe</description>
+    <title>Infraestructura on Notas Del Profe</title>
+    <link>http://localhost:1313/blog-posts/tags/infraestructura/</link>
+    <description>Recent content in Infraestructura on Notas Del Profe</description>
     <generator>Hugo</generator>
     <language>es-ES</language>
     <lastBuildDate>Sat, 01 Aug 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog-posts/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog-posts/tags/infraestructura/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>¿SubsidIAdos?</title>
       <link>http://localhost:1313/blog-posts/posts/subsidiado/</link>

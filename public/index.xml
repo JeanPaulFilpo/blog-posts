@@ -6,14 +6,22 @@
     <description>Recent content on Notas Del Profe</description>
     <generator>Hugo</generator>
     <language>es-ES</language>
-    <lastBuildDate>Sun, 26 Jul 2026 19:48:14 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog-posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello World</title>
-      <link>http://localhost:1313/blog-posts/posts/hello-world/</link>
-      <pubDate>Sun, 26 Jul 2026 19:48:14 -0400</pubDate>
-      <guid>http://localhost:1313/blog-posts/posts/hello-world/</guid>
-      <description>&lt;p&gt;Este es un primer post sobre datos e IA.&lt;/p&gt;</description>
+      <title>¿SubsidIAdos?</title>
+      <link>http://localhost:1313/blog-posts/posts/subsidiado/</link>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog-posts/posts/subsidiado/</guid>
+      <description>¿Cuánto nos costaría correr modelos como Claude o GPT-5.6 en infraestructura propia?</description>
+    </item>
+    <item>
+      <title>Sobre este espacio</title>
+      <link>http://localhost:1313/blog-posts/about/</link>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog-posts/about/</guid>
+      <description>&lt;p&gt;La verdad es que no es tan fácil encontrar espacios en los cuáles hablar de educación, actualidad, criptografía cuántica, ciencia de datos, las matemáticas de machine learning, el propósito de la vida y la teoría de cuerdas, todo al mismo tiempo. Afortunadamente (o por desgracia), para eso tenemos al Internet.&lt;/p&gt;
+&lt;p&gt;¿Qué buscamos aquí? Honestamente, un espacio que vaya más allá de un post de Linkedin pero de más fácil acceso que un salón universitario. Un lugar donde coexistan lo cotidiano, lo profesional y lo técnico. Un blog con ideas, ecuaciones, algoritmos y sueños.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

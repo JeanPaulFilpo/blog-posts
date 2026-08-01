@@ -2,11 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/blog-posts/posts/hello-world/</loc>
-    <lastmod>2026-07-26T19:48:14-04:00</lastmod>
+    <loc>http://localhost:1313/blog-posts/posts/subsidiado/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/categories/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="http://localhost:1313/blog-posts/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="http://localhost:1313/blog-posts/en/categories/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/categories/ia/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/tags/ia/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/tags/infraestructura/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/tags/modelos-abiertos/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog-posts/</loc>
-    <lastmod>2026-07-26T19:48:14-04:00</lastmod>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
@@ -19,21 +44,13 @@
                 />
   </url><url>
     <loc>http://localhost:1313/blog-posts/posts/</loc>
-    <lastmod>2026-07-26T19:48:14-04:00</lastmod>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog-posts/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="http://localhost:1313/blog-posts/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="http://localhost:1313/blog-posts/en/categories/"
-                />
+    <loc>http://localhost:1313/blog-posts/about/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog-posts/tags/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
