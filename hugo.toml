@@ -34,11 +34,3 @@ defaultContentLanguageInSubdir = false
     title = "Notas Del Profe"
     [languages.es.params]
       description = "Apuntes sobre datos, IA y demás"
-
-  [languages.en]
-    label = "English"
-    locale = "en-US"
-    weight = 2
-    title = "Notas Del Profe"
-    [languages.en.params]
-      description = "Notes on data, AI, and whatnot"

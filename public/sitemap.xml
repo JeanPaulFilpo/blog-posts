@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-		<sitemap>
-			<loc>http://localhost:1313/blog-posts/es/sitemap.xml</loc>
-			
-				<lastmod>2026-08-01T00:00:00+00:00</lastmod>
-			
-		</sitemap>
-	
-		<sitemap>
-			<loc>http://localhost:1313/blog-posts/en/sitemap.xml</loc>
-			
-		</sitemap>
-	
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/blog-posts/posts/subsidiado/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/categories/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/categories/ia/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/tags/ia/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/tags/infraestructura/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/tags/modelos-abiertos/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/posts/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/about/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog-posts/tags/</loc>
+    <lastmod>2026-08-01T00:00:00+00:00</lastmod>
+  </url>
+</urlset>
