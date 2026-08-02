@@ -1,7 +1,7 @@
 ---
 title: "¿SubsidIAdos?"
 date: 2026-08-01
-draft: true
+draft: false
 tags: ["ia", "infraestructura", "modelos-abiertos"]
 categories: ["ia"]
 description: "¿Cuánto nos costaría correr modelos como Claude o GPT-5.6 en infraestructura propia?"
