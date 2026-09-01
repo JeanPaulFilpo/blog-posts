@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es" dir="auto" data-theme="auto">
+
+<head><script src="/blog-posts/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog-posts/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Guía rápida para escribir posts con Hugo y publicarlos en GitHub | Notas Del Profe</title>
+<meta name="keywords" content="hugo, github, blog, publicacion">
+<meta name="description" content="Todos los comandos básicos para crear, previsualizar, publicar y mantener este blog de Hugo en GitHub.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/blog-posts/posts/help/">
+<link crossorigin="anonymous" href="/blog-posts/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/blog-posts/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/blog-posts/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/blog-posts/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/blog-posts/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/blog-posts/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="es" href="http://localhost:1313/blog-posts/posts/help/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+<meta property="og:url" content="http://localhost:1313/blog-posts/posts/help/">
+  <meta property="og:site_name" content="Notas Del Profe">
+  <meta property="og:title" content="Guía rápida para escribir posts con Hugo y publicarlos en GitHub">
+  <meta property="og:description" content="Todos los comandos básicos para crear, previsualizar, publicar y mantener este blog de Hugo en GitHub.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-08-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-08-30T00:00:00+00:00">
+    <meta property="article:tag" content="Hugo">
+    <meta property="article:tag" content="Github">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Publicacion">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Guía rápida para escribir posts con Hugo y publicarlos en GitHub">
+  <meta name="twitter:description" content="Todos los comandos básicos para crear, previsualizar, publicar y mantener este blog de Hugo en GitHub.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/blog-posts/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Guía rápida para escribir posts con Hugo y publicarlos en GitHub",
+      "item": "http://localhost:1313/blog-posts/posts/help/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Guía rápida para escribir posts con Hugo y publicarlos en GitHub",
+  "name": "Guía rápida para escribir posts con Hugo y publicarlos en GitHub",
+  "description": "Todos los comandos básicos para crear, previsualizar, publicar y mantener este blog de Hugo en GitHub.",
+  "keywords": [
+    "hugo", "github", "blog", "publicacion"
+  ],
+  "articleBody": "Este post es tu guía de referencia rápida para trabajar con este blog. Aquí te dejo todo lo que necesitas saber para escribir artículos, revisarlos localmente y publicarlos en GitHub.\n1) Qué es Hugo y cómo se usa aquí Hugo es un generador de sitios estáticos. En este proyecto, cada entrada del blog está escrita en Markdown y se transforma automáticamente en páginas HTML.\nLa estructura principal es esta:\ncontent/ → los posts y páginas del sitio layouts/ → plantillas del tema static/ → archivos estáticos como imágenes o favicon public/ → la versión compilada del sitio hugo.toml → configuración principal del blog 2) Instalar Hugo en tu Mac Si aún no lo tienes instalado, ejecuta:\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\" eval \"$(/opt/homebrew/bin/brew shellenv zsh)\" brew install hugo Luego confirma que está funcionando:\nhugo version Si todo salió bien, verás algo como:\nhugo v0.165.0+extended+withdeploy darwin/arm64 ... 3) Cómo crear un nuevo post La forma recomendada es usar la terminal:\nhugo new posts/mi-nuevo-post.md Esto crea un archivo en content/posts/ con un encabezado inicial tipo:\n--- title: \"Mi nuevo post\" date: 2026-08-30 draft: true tags: [] categories: [] description: \"\" --- Campos útiles del front matter title: nombre del artículo date: fecha de publicación draft: si es true, no se publica en la vista normal tags: palabras clave para filtrar categories: categorías del blog description: resumen del artículo Cuando estés listo para publicarlo, cambia:\ndraft: true a:\ndraft: false 4) Escribir el contenido del post Los posts viven en Markdown (.md). Puedes escribir con textos, listas, enlaces, encabezados y bloques de código.\nEjemplo básico:\n# Título del artículo Este es el primer párrafo. ## Subtítulo - Punto 1 - Punto 2 - Punto 3 ```bash echo \"Hola mundo\" ### Recomendaciones para escribir bien - Usa títulos claros y breves - Mantén los párrafos cortos - Añade enlaces a referencias externas - Usa `tags` y `categories` para organizar el blog - Si el post aún no está listo, déjalo en `draft: true` ## 5) Previsualizar el sitio localmente Para levantar el sitio en tu máquina y ver los cambios en tiempo real: ```bash hugo server -D La opción -D incluye los posts en borrador. Si quieres verlo solo en el sitio que ya está publicado, usa:\nhugo server Luego abre en tu navegador:\nhttp://localhost:1313 Si quieres que se actualice más rápido hugo server --disableFastRender Esto es útil cuando estás editando y quieres ver cambios con menos demora.\n6) Generar la versión final del sitio Cuando ya estés listo para compilar la versión estática del blog:\nhugo Esto genera la carpeta public/ con todos los archivos HTML listos para publicar.\n7) Cómo revisar el proyecto antes de subirlo Puedes chequear el estado del repositorio con:\ngit status Y ver lo que se ha modificado:\ngit diff Si quieres compilar y confirmar que no hay errores:\nhugo Si la salida termina sin errores, la versión está bien generada.\n8) GitHub: cómo hacer commit y push Este repositorio ya está conectado a GitHub con el remoto origin y la rama main.\n1. Verifica el estado git status 2. Añade los cambios git add . 3. Haz el commit git commit -m \"Agregar nuevo post sobre Hugo\" 4. Subelo a GitHub git push origin main Esto sube los cambios a la rama principal del repositorio.\n9) Cómo publicar con GitHub Pages Este proyecto tiene la base configurada para GitHub Pages:\nbaseURL = 'https://jeanpaulfilpo.github.io/blog-posts/' Eso significa que el sitio se publicará bajo una URL tipo:\nhttps://jeanpaulfilpo.github.io/blog-posts/ Opción recomendada En GitHub, entra a:\nSettings Pages Elige la rama que vas a publicar (main o gh-pages, según tu flujo) Guarda la configuración Si usas la opción de publicar la carpeta public desde un branch de despliegue, normalmente haces esto:\nhugo git add public git commit -m \"Actualizar sitio generado\" git push origin main Si tu flujo usa gh-pages, también puedes hacer:\ngit subtree push --prefix public origin gh-pages 10) Flujo diario recomendado Aquí va la rutina más útil para escribir posts:\n# 1. Crear el archivo hugo new posts/mi-post.md # 2. Editar el contenido # abrir el archivo en VS Code # 3. Revisar en local hugo server -D # 4. Cuando esté listo hugo git add . git commit -m \"Añadir nuevo post\" git push origin main 11) Insertar ecuaciones con LaTeX Si quieres poner fórmulas en tus posts, puedes usar KaTeX con este formato:\nLa energía relativista es: \\\\[ E = mc^2 \\\\] Y la suma de los primeros números naturales es: \\\\[ \\\\sum_{i=1}^{n} i = \\\\frac{n(n+1)}{2} \\\\] También puedes escribir una fórmula inline como \\\\(\\\\log_{10}(x)\\\\). Recomendaciones Usa \\(...\\) para fórmulas cortas dentro del texto. Usa \\[...\\] para ecuaciones en bloque. Evita usar $...$ si quieres evitar conflictos con Markdown. 12) Comandos más útiles para recordarte hugo version hugo new posts/nombre-del-post.md hugo server -D hugo server hugo git status git add . git commit -m \"mensaje\" git push origin main 13) Consejos prácticos Siempre prueba el sitio con hugo server -D antes de publicar. Usa draft: true para guardar ideas sin publicarlas aún. Revisa los nombres de archivos y slugs para que sean sencillos. Haz commits pequeños y descriptivos. No publiques sin revisar el contenido final en el navegador. 13) Resumen rápido Si quieres un flujo mínimo y funcional:\nhugo new posts/mi-post.md # editar el archivo hugo server -D # cuando esté listo hugo git add . git commit -m \"Nuevo post\" git push origin main Y listo: tu artículo queda listo para ser visto en el sitio y publicado en GitHub.\nSi quieres, en el siguiente post puedo ayudarte a crear una plantilla profesional para tus posts con ejemplo de portada, imágenes, tags, categorías y una estructura tipo blog editorial.\n",
+  "wordCount" : "943",
+  "inLanguage": "es",
+  "datePublished": "2026-08-30T00:00:00Z",
+  "dateModified": "2026-08-30T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/blog-posts/posts/help/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Notas Del Profe",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/blog-posts/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/blog-posts/" accesskey="h" title="Notas Del Profe (Alt + H)">Notas Del Profe</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Guía rápida para escribir posts con Hugo y publicarlos en GitHub
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-description">
+      Todos los comandos básicos para crear, previsualizar, publicar y mantener este blog de Hugo en GitHub.
+    </div>
+    <div class="post-meta">
+
+<span title='2026-08-30 00:00:00 +0000 UTC'>30 de agosto de 2026</span>&nbsp;·&nbsp;<span>5 min</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Tabla de Contenidos</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#1-qu%c3%a9-es-hugo-y-c%c3%b3mo-se-usa-aqu%c3%ad" aria-label="1) Qué es Hugo y cómo se usa aquí">1) Qué es Hugo y cómo se usa aquí</a></li>
+            <li>
+                <a href="#2-instalar-hugo-en-tu-mac" aria-label="2) Instalar Hugo en tu Mac">2) Instalar Hugo en tu Mac</a></li>
+            <li>
+                <a href="#3-c%c3%b3mo-crear-un-nuevo-post" aria-label="3) Cómo crear un nuevo post">3) Cómo crear un nuevo post</a><ul>
+                    
+            <li>
+                <a href="#campos-%c3%batiles-del-front-matter" aria-label="Campos útiles del front matter">Campos útiles del front matter</a></li></ul>
+            </li>
+            <li>
+                <a href="#4-escribir-el-contenido-del-post" aria-label="4) Escribir el contenido del post">4) Escribir el contenido del post</a><ul>
+                    
+            <li>
+                <a href="#si-quieres-que-se-actualice-m%c3%a1s-r%c3%a1pido" aria-label="Si quieres que se actualice más rápido">Si quieres que se actualice más rápido</a></li></ul>
+            </li>
+            <li>
+                <a href="#6-generar-la-versi%c3%b3n-final-del-sitio" aria-label="6) Generar la versión final del sitio">6) Generar la versión final del sitio</a></li>
+            <li>
+                <a href="#7-c%c3%b3mo-revisar-el-proyecto-antes-de-subirlo" aria-label="7) Cómo revisar el proyecto antes de subirlo">7) Cómo revisar el proyecto antes de subirlo</a></li>
+            <li>
+                <a href="#8-github-c%c3%b3mo-hacer-commit-y-push" aria-label="8) GitHub: cómo hacer commit y push">8) GitHub: cómo hacer commit y push</a><ul>
+                    
+            <li>
+                <a href="#1-verifica-el-estado" aria-label="1. Verifica el estado">1. Verifica el estado</a></li>
+            <li>
+                <a href="#2-a%c3%b1ade-los-cambios" aria-label="2. Añade los cambios">2. Añade los cambios</a></li>
+            <li>
+                <a href="#3-haz-el-commit" aria-label="3. Haz el commit">3. Haz el commit</a></li>
+            <li>
+                <a href="#4-subelo-a-github" aria-label="4. Subelo a GitHub">4. Subelo a GitHub</a></li></ul>
+            </li>
+            <li>
+                <a href="#9-c%c3%b3mo-publicar-con-github-pages" aria-label="9) Cómo publicar con GitHub Pages">9) Cómo publicar con GitHub Pages</a><ul>
+                    
+            <li>
+                <a href="#opci%c3%b3n-recomendada" aria-label="Opción recomendada">Opción recomendada</a></li></ul>
+            </li>
+            <li>
+                <a href="#10-flujo-diario-recomendado" aria-label="10) Flujo diario recomendado">10) Flujo diario recomendado</a></li>
+            <li>
+                <a href="#11-insertar-ecuaciones-con-latex" aria-label="11) Insertar ecuaciones con LaTeX">11) Insertar ecuaciones con LaTeX</a><ul>
+                    
+            <li>
+                <a href="#recomendaciones" aria-label="Recomendaciones">Recomendaciones</a></li></ul>
+            </li>
+            <li>
+                <a href="#12-comandos-m%c3%a1s-%c3%batiles-para-recordarte" aria-label="12) Comandos más útiles para recordarte">12) Comandos más útiles para recordarte</a></li>
+            <li>
+                <a href="#13-consejos-pr%c3%a1cticos" aria-label="13) Consejos prácticos">13) Consejos prácticos</a></li>
+            <li>
+                <a href="#13-resumen-r%c3%a1pido" aria-label="13) Resumen rápido">13) Resumen rápido</a>
+            </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><p>Este post es tu guía de referencia rápida para trabajar con este blog. Aquí te dejo todo lo que necesitas saber para escribir artículos, revisarlos localmente y publicarlos en GitHub.</p>
+<h2 id="1-qué-es-hugo-y-cómo-se-usa-aquí">1) Qué es Hugo y cómo se usa aquí<a hidden class="anchor" aria-hidden="true" href="#1-qué-es-hugo-y-cómo-se-usa-aquí">#</a></h2>
+<p>Hugo es un generador de sitios estáticos. En este proyecto, cada entrada del blog está escrita en Markdown y se transforma automáticamente en páginas HTML.</p>
+<p>La estructura principal es esta:</p>
+<ul>
+<li><code>content/</code> → los posts y páginas del sitio</li>
+<li><code>layouts/</code> → plantillas del tema</li>
+<li><code>static/</code> → archivos estáticos como imágenes o favicon</li>
+<li><code>public/</code> → la versión compilada del sitio</li>
+<li><code>hugo.toml</code> → configuración principal del blog</li>
+</ul>
+<h2 id="2-instalar-hugo-en-tu-mac">2) Instalar Hugo en tu Mac<a hidden class="anchor" aria-hidden="true" href="#2-instalar-hugo-en-tu-mac">#</a></h2>
+<p>Si aún no lo tienes instalado, ejecuta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>/opt/homebrew/bin/brew shellenv zsh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>brew install hugo
+</span></span></code></pre></div><p>Luego confirma que está funcionando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo version
+</span></span></code></pre></div><p>Si todo salió bien, verás algo como:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo v0.165.0+extended+withdeploy darwin/arm64 ...
+</span></span></code></pre></div><h2 id="3-cómo-crear-un-nuevo-post">3) Cómo crear un nuevo post<a hidden class="anchor" aria-hidden="true" href="#3-cómo-crear-un-nuevo-post">#</a></h2>
+<p>La forma recomendada es usar la terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new posts/mi-nuevo-post.md
+</span></span></code></pre></div><p>Esto crea un archivo en <code>content/posts/</code> con un encabezado inicial tipo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;Mi nuevo post&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">date</span>: <span style="color:#e6db74">2026-08-30</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">draft</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">tags</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">categories</span>: []
+</span></span><span style="display:flex;"><span><span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><h3 id="campos-útiles-del-front-matter">Campos útiles del front matter<a hidden class="anchor" aria-hidden="true" href="#campos-útiles-del-front-matter">#</a></h3>
+<ul>
+<li><code>title</code>: nombre del artículo</li>
+<li><code>date</code>: fecha de publicación</li>
+<li><code>draft</code>: si es <code>true</code>, no se publica en la vista normal</li>
+<li><code>tags</code>: palabras clave para filtrar</li>
+<li><code>categories</code>: categorías del blog</li>
+<li><code>description</code>: resumen del artículo</li>
+</ul>
+<p>Cuando estés listo para publicarlo, cambia:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">draft</span>: <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><p>a:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">draft</span>: <span style="color:#66d9ef">false</span>
+</span></span></code></pre></div><h2 id="4-escribir-el-contenido-del-post">4) Escribir el contenido del post<a hidden class="anchor" aria-hidden="true" href="#4-escribir-el-contenido-del-post">#</a></h2>
+<p>Los posts viven en Markdown (<code>.md</code>). Puedes escribir con textos, listas, enlaces, encabezados y bloques de código.</p>
+<p>Ejemplo básico:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Título del artículo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Este es el primer párrafo.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Subtítulo
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Punto 1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Punto 2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Punto 3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```bash
+</span></span><span style="display:flex;"><span>echo &#34;Hola mundo&#34;
+</span></span></code></pre></div><pre tabindex="0"><code>
+### Recomendaciones para escribir bien
+
+- Usa títulos claros y breves
+- Mantén los párrafos cortos
+- Añade enlaces a referencias externas
+- Usa `tags` y `categories` para organizar el blog
+- Si el post aún no está listo, déjalo en `draft: true`
+
+## 5) Previsualizar el sitio localmente
+
+Para levantar el sitio en tu máquina y ver los cambios en tiempo real:
+
+```bash
+hugo server -D
+</code></pre><p>La opción <code>-D</code> incluye los posts en borrador. Si quieres verlo solo en el sitio que ya está publicado, usa:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server
+</span></span></code></pre></div><p>Luego abre en tu navegador:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>http://localhost:1313
+</span></span></code></pre></div><h3 id="si-quieres-que-se-actualice-más-rápido">Si quieres que se actualice más rápido<a hidden class="anchor" aria-hidden="true" href="#si-quieres-que-se-actualice-más-rápido">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server --disableFastRender
+</span></span></code></pre></div><p>Esto es útil cuando estás editando y quieres ver cambios con menos demora.</p>
+<h2 id="6-generar-la-versión-final-del-sitio">6) Generar la versión final del sitio<a hidden class="anchor" aria-hidden="true" href="#6-generar-la-versión-final-del-sitio">#</a></h2>
+<p>Cuando ya estés listo para compilar la versión estática del blog:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo
+</span></span></code></pre></div><p>Esto genera la carpeta <code>public/</code> con todos los archivos HTML listos para publicar.</p>
+<h2 id="7-cómo-revisar-el-proyecto-antes-de-subirlo">7) Cómo revisar el proyecto antes de subirlo<a hidden class="anchor" aria-hidden="true" href="#7-cómo-revisar-el-proyecto-antes-de-subirlo">#</a></h2>
+<p>Puedes chequear el estado del repositorio con:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git status
+</span></span></code></pre></div><p>Y ver lo que se ha modificado:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git diff
+</span></span></code></pre></div><p>Si quieres compilar y confirmar que no hay errores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo
+</span></span></code></pre></div><p>Si la salida termina sin errores, la versión está bien generada.</p>
+<h2 id="8-github-cómo-hacer-commit-y-push">8) GitHub: cómo hacer commit y push<a hidden class="anchor" aria-hidden="true" href="#8-github-cómo-hacer-commit-y-push">#</a></h2>
+<p>Este repositorio ya está conectado a GitHub con el remoto <code>origin</code> y la rama <code>main</code>.</p>
+<h3 id="1-verifica-el-estado">1. Verifica el estado<a hidden class="anchor" aria-hidden="true" href="#1-verifica-el-estado">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git status
+</span></span></code></pre></div><h3 id="2-añade-los-cambios">2. Añade los cambios<a hidden class="anchor" aria-hidden="true" href="#2-añade-los-cambios">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span></code></pre></div><h3 id="3-haz-el-commit">3. Haz el commit<a hidden class="anchor" aria-hidden="true" href="#3-haz-el-commit">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Agregar nuevo post sobre Hugo&#34;</span>
+</span></span></code></pre></div><h3 id="4-subelo-a-github">4. Subelo a GitHub<a hidden class="anchor" aria-hidden="true" href="#4-subelo-a-github">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><p>Esto sube los cambios a la rama principal del repositorio.</p>
+<h2 id="9-cómo-publicar-con-github-pages">9) Cómo publicar con GitHub Pages<a hidden class="anchor" aria-hidden="true" href="#9-cómo-publicar-con-github-pages">#</a></h2>
+<p>Este proyecto tiene la base configurada para GitHub Pages:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://jeanpaulfilpo.github.io/blog-posts/&#39;</span>
+</span></span></code></pre></div><p>Eso significa que el sitio se publicará bajo una URL tipo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://jeanpaulfilpo.github.io/blog-posts/
+</span></span></code></pre></div><h3 id="opción-recomendada">Opción recomendada<a hidden class="anchor" aria-hidden="true" href="#opción-recomendada">#</a></h3>
+<p>En GitHub, entra a:</p>
+<ol>
+<li><code>Settings</code></li>
+<li><code>Pages</code></li>
+<li>Elige la rama que vas a publicar (<code>main</code> o <code>gh-pages</code>, según tu flujo)</li>
+<li>Guarda la configuración</li>
+</ol>
+<p>Si usas la opción de publicar la carpeta <code>public</code> desde un branch de despliegue, normalmente haces esto:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git add public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Actualizar sitio generado&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><p>Si tu flujo usa <code>gh-pages</code>, también puedes hacer:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git subtree push --prefix public origin gh-pages
+</span></span></code></pre></div><h2 id="10-flujo-diario-recomendado">10) Flujo diario recomendado<a hidden class="anchor" aria-hidden="true" href="#10-flujo-diario-recomendado">#</a></h2>
+<p>Aquí va la rutina más útil para escribir posts:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. Crear el archivo</span>
+</span></span><span style="display:flex;"><span>hugo new posts/mi-post.md
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Editar el contenido</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># abrir el archivo en VS Code</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Revisar en local</span>
+</span></span><span style="display:flex;"><span>hugo server -D
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. Cuando esté listo</span>
+</span></span><span style="display:flex;"><span>hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Añadir nuevo post&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><h2 id="11-insertar-ecuaciones-con-latex">11) Insertar ecuaciones con LaTeX<a hidden class="anchor" aria-hidden="true" href="#11-insertar-ecuaciones-con-latex">#</a></h2>
+<p>Si quieres poner fórmulas en tus posts, puedes usar KaTeX con este formato:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>La energía relativista es:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>\\[
+</span></span><span style="display:flex;"><span>E = mc^2
+</span></span><span style="display:flex;"><span>\\]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Y la suma de los primeros números naturales es:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>\\[
+</span></span><span style="display:flex;"><span>\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}
+</span></span><span style="display:flex;"><span>\\]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>También puedes escribir una fórmula inline como \\(\\log_{10}(x)\\).
+</span></span></code></pre></div><h3 id="recomendaciones">Recomendaciones<a hidden class="anchor" aria-hidden="true" href="#recomendaciones">#</a></h3>
+<ul>
+<li>Usa <code>\(...\)</code> para fórmulas cortas dentro del texto.</li>
+<li>Usa <code>\[...\]</code> para ecuaciones en bloque.</li>
+<li>Evita usar <code>$...$</code> si quieres evitar conflictos con Markdown.</li>
+</ul>
+<h2 id="12-comandos-más-útiles-para-recordarte">12) Comandos más útiles para recordarte<a hidden class="anchor" aria-hidden="true" href="#12-comandos-más-útiles-para-recordarte">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo version
+</span></span><span style="display:flex;"><span>hugo new posts/nombre-del-post.md
+</span></span><span style="display:flex;"><span>hugo server -D
+</span></span><span style="display:flex;"><span>hugo server
+</span></span><span style="display:flex;"><span>hugo
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;mensaje&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><h2 id="13-consejos-prácticos">13) Consejos prácticos<a hidden class="anchor" aria-hidden="true" href="#13-consejos-prácticos">#</a></h2>
+<ul>
+<li>Siempre prueba el sitio con <code>hugo server -D</code> antes de publicar.</li>
+<li>Usa <code>draft: true</code> para guardar ideas sin publicarlas aún.</li>
+<li>Revisa los nombres de archivos y slugs para que sean sencillos.</li>
+<li>Haz commits pequeños y descriptivos.</li>
+<li>No publiques sin revisar el contenido final en el navegador.</li>
+</ul>
+<h2 id="13-resumen-rápido">13) Resumen rápido<a hidden class="anchor" aria-hidden="true" href="#13-resumen-rápido">#</a></h2>
+<p>Si quieres un flujo mínimo y funcional:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new posts/mi-post.md
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># editar el archivo</span>
+</span></span><span style="display:flex;"><span>hugo server -D
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># cuando esté listo</span>
+</span></span><span style="display:flex;"><span>hugo
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Nuevo post&#34;</span>
+</span></span><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div><p>Y listo: tu artículo queda listo para ser visto en el sitio y publicado en GitHub.</p>
+<p>Si quieres, en el siguiente post puedo ayudarte a crear una plantilla profesional para tus posts con ejemplo de portada, imágenes, tags, categorías y una estructura tipo blog editorial.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/blog-posts/tags/hugo/">Hugo</a></li>
+      <li><a href="http://localhost:1313/blog-posts/tags/github/">Github</a></li>
+      <li><a href="http://localhost:1313/blog-posts/tags/blog/">Blog</a></li>
+      <li><a href="http://localhost:1313/blog-posts/tags/publicacion/">Publicacion</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/blog-posts/">Notas Del Profe</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copiar';
+
+        function copyingDone() {
+            copybutton.innerHTML = '¡copiado!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copiar';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

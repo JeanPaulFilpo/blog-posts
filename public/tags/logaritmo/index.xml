@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Logaritmo on Notas Del Profe</title>
+    <link>https://jeanpaulfilpo.github.io/blog-posts/tags/logaritmo/</link>
+    <description>Recent content in Logaritmo on Notas Del Profe</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <lastBuildDate>Sun, 30 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jeanpaulfilpo.github.io/blog-posts/tags/logaritmo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Benford, ayúdame ahí.</title>
+      <link>https://jeanpaulfilpo.github.io/blog-posts/posts/ley-de-benford/</link>
+      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://jeanpaulfilpo.github.io/blog-posts/posts/ley-de-benford/</guid>
+      <description>¿Cómo las empresas saben cuando alguien está haciendo fraude?</description>
+    </item>
+  </channel>
+</rss>

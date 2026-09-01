@@ -4,6 +4,15 @@ theme = "PaperMod"
 defaultContentLanguage = "es"
 defaultContentLanguageInSubdir = false
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]']]
+          inline = [['\(', '\)']]
+
 [params]
   env = "production"
   ShowReadingTime = true
