@@ -1,1 +1,17 @@
-{{/* Math is rendered natively by Hugo passthrough + render hook; no client-side CDN JS here. */}}
+{{- /*
+  Math is rendered natively by Hugo at build time (goldmark passthrough +
+  layouts/_default/_markup/render-passthrough.html using transform.ToMath with
+  output "htmlAndMathml"). No client-side CDN JS / auto-render here on purpose:
+  a `$` auto-render delimiter would turn currency like "RD$150,000" into LaTeX,
+  and client-side rendering would double up the build-time output.
+
+  The render hook sets Page.Store "hasMath" while the content renders, which
+  happens AFTER <head>. Referencing .Content here forces that render first so
+  the flag is readable, letting us ship KaTeX's stylesheet only on pages that
+  actually contain math. Without the stylesheet the hidden MathML half of
+  "htmlAndMathml" becomes visible next to the HTML half -> duplicated formulas.
+*/ -}}
+{{- with .Content }}{{ end -}}
+{{- if .Page.Store.Get "hasMath" }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+{{- end }}
