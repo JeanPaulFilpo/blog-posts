@@ -6,7 +6,7 @@ tags: ["fraude", "benford", "logaritmo"]
 categories: ["fraude"]
 description: "¿Cómo las empresas saben cuando alguien está haciendo fraude?"
 ---
-El otro día abrí Youtube para perder un poco de tiempo, y me detuve a ver las recomendaciones de mi algoritmo: encripción de llave pública, pimienta negra recién molida (el que sabe sabe), documentales de la naturaleza, lo típico. Sin embargo, hubo una recomendación que llamó mucho mi atención: All Time Trending Baby Pink Glamour 2025; inmediatamente entendí que mi esposa había estando usando mi cuenta. 
+El otro día abrí Youtube para perder un poco de tiempo, y me detuve a ver las recomendaciones de mi algoritmo: encripción de llave pública, pimienta negra recién molida (el que sabe sabe), documentales de la naturaleza, lo típico. Sin embargo, hubo una recomendación que llamó mucho mi atención: All Time Trending Baby Pink Glamour 2025; inmediatamente entendí que mi esposa había estado usando mi cuenta. 
 
 De manera similar, muchas empresas ya tienen un perfil (quizá demasiado detallado) sobre quiénes somos: qué compramos, a qué hora lo compramos, por qué plataforma, cuánto costó, y así por el estilo, de modo que cualquier comportamiento fuera de lo común levanta la bandera de fraude. Así que si vives en Santo Domingo y de repente llenas el tanque en un viaje al interior en una estación de combustible de un paraje remoto en Montecristi, puedes esperar una cálida llamada del departamento de fraude de tu banco favorito (o no tanto).
 
