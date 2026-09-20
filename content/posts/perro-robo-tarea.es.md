@@ -34,11 +34,11 @@ Que no sabemos si el librito está completo. No sabemos si realmente, cada vez q
 
 Los matemáticos Tristan Buckmaster de NYU y Levent Alpöge de Anthropic (la empresa de Claude) publicaron resultados que indicaban que había muchas posibilidades de que el librito estuviese incompleto. Estuvieron trabajando en ello en silencio apoyándose de varias herramientas de IA, entre ellas Codex, de Open AI.
 
-La controversia viene porque varios días después, OpenAI publica un artículo diciendo que hizo uso de un modelo interno que han desarrollado, que orquestó más de 10,000 trabajando en paralelo durante 88 horas, consumiendo 4.9 millones de mensajes y produciendo más de 300 billones tokens de salida para ofrecer una solución completa al problema.
+La controversia viene porque varios días después, OpenAI publica un artículo diciendo que hizo uso de un modelo interno que han desarrollado, que orquestó más de 10,000 agentes trabajando en paralelo durante 88 horas, consumiendo 4.9 millones de mensajes y produciendo más de 300 billones tokens de salida para ofrecer una solución completa al problema.
 
 ### ¿Qué sostienen ambas partes?
 
-Buckmaster ha dicho de que OpenAI se le acercó para ofrecerle autoría en el paper final, pero que debía dejar de lado las contribuciones de Alpöge (que trabajaba para la competencia). Además, ambos sostienen que como estaba alojando su trabajo en Codex, entendían que OpenAI habría utilizado sus avances como material de base para ejecutar su propia solución: una acusación gravísima de privacidad y seguridad de la información.
+Buckmaster ha dicho que OpenAI se le acercó para ofrecerle autoría en el paper final, pero que debía dejar de lado las contribuciones de Alpöge (que trabajaba para la competencia). Además, ambos sostienen que como estaban alojando su trabajo en Codex, entendían que OpenAI habría utilizado sus avances como material de base para ejecutar su propia solución: una acusación gravísima de privacidad y seguridad de la información.
 
 Por su parte, OpenAI en principio negó que esto haya sido así, y su respuesta fue que "no pueden descartar que sus modelos hayan hecho uso de data interna de clientes no identificable para producir ciertos outputs". 
 
